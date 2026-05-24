@@ -2,4 +2,4 @@
 .claude
 .claude_cache
 .idea
-.logs
+/logs/
