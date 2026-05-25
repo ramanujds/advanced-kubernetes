@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: part-inventory-service-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: part-inventory-service
+  template:
+    metadata:
+      labels:
+        app: part-inventory-service
+    spec:
+      containers:
+        - name: part-inventory-service
+          image: ram1uj/abc
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Never
+
