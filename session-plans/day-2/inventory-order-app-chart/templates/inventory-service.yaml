@@ -1,0 +1,19 @@
+{{- if .Values.partInventory.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.partInventory.service.name }}
+  labels:
+    {{- include "inv-order-app.labels" . | nindent 4 }}
+    {{- include "inv-order-app.inventory.selectorLabels" . | nindent 4 }}
+spec:
+  type: {{ .Values.partInventory.service.type }}
+  selector:
+    {{- include "inv-order-app.inventory.selectorLabels" . | nindent 4 }}
+  ports:
+    - port: {{ .Values.partInventory.service.port }}
+      targetPort: {{ .Values.partInventory.service.targetPort }}
+      {{- if eq .Values.partInventory.service.type "NodePort" }}
+      nodePort: {{ .Values.partInventory.service.nodePort }}
+      {{- end }}
+{{- end }}

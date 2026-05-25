@@ -1,24 +1,24 @@
-2026-05-22 18:37:12.160 [main] INFO  c.f.p.PartInventoryServiceApplicationTests - Starting PartInventoryServiceApplicationTests using Java 25.0.1 with PID 29369 (started by ramanuj in /Users/ramanuj/Documents/training-projects/advanced-kubernetes/services-source-code/part-inventory-service)
-2026-05-22 18:37:12.161 [main] INFO  c.f.p.PartInventoryServiceApplicationTests - The following 1 profile is active: "dev"
-2026-05-22 18:37:12.177 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-22 18:37:12.178 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/part-inventory-service/default": Connection refused. Will be trying the next url if available
-2026-05-22 18:37:12.178 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@59b32539 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/part-inventory-service/default": Connection refused
-2026-05-22 18:37:12.178 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-22 18:37:12.178 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/part-inventory-service/dev": Connection refused. Will be trying the next url if available
-2026-05-22 18:37:12.178 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@40ac6b76 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'dev']): I/O error on GET request for "http://localhost:8888/part-inventory-service/dev": Connection refused
-2026-05-22 18:37:12.178 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-22 18:37:12.179 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/part-inventory-service/default": Connection refused. Will be trying the next url if available
-2026-05-22 18:37:12.179 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@7980cf2c uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/part-inventory-service/default": Connection refused
-2026-05-22 18:37:12.714 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-22 18:37:12.741 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 1 JPA repository interface.
-2026-05-22 18:37:12.844 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=966e0b74-3ac1-35cf-ad9d-ec78d95ce511
-2026-05-22 18:37:12.967 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2026-05-22 18:37:13.070 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:part_inventory_db user=SA
-2026-05-22 18:37:13.070 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2026-05-22 18:37:13.118 [main] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-05-22 18:37:13.158 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.1.Final
-2026-05-22 18:37:13.394 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-22 18:37:13.446 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+2026-05-25 12:01:35.030 [main] INFO  c.f.p.PartInventoryServiceApplicationTests - Starting PartInventoryServiceApplicationTests using Java 25.0.1 with PID 19746 (started by ramanuj in /Users/ramanuj/Documents/training-projects/advanced-kubernetes/services-source-code/part-inventory-service)
+2026-05-25 12:01:35.031 [main] INFO  c.f.p.PartInventoryServiceApplicationTests - The following 1 profile is active: "dev"
+2026-05-25 12:01:35.051 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-25 12:01:35.051 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/part-inventory-service/default": Connection refused. Will be trying the next url if available
+2026-05-25 12:01:35.051 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@59b32539 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/part-inventory-service/default": Connection refused
+2026-05-25 12:01:35.052 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-25 12:01:35.052 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/part-inventory-service/dev": Connection refused. Will be trying the next url if available
+2026-05-25 12:01:35.052 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@40ac6b76 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'dev']): I/O error on GET request for "http://localhost:8888/part-inventory-service/dev": Connection refused
+2026-05-25 12:01:35.052 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-25 12:01:35.052 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/part-inventory-service/default": Connection refused. Will be trying the next url if available
+2026-05-25 12:01:35.052 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@7980cf2c uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/part-inventory-service/default": Connection refused
+2026-05-25 12:01:35.658 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-25 12:01:35.688 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 1 JPA repository interface.
+2026-05-25 12:01:35.804 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=966e0b74-3ac1-35cf-ad9d-ec78d95ce511
+2026-05-25 12:01:35.954 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-25 12:01:36.080 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:part_inventory_db user=SA
+2026-05-25 12:01:36.083 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-25 12:01:36.144 [main] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-25 12:01:36.177 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-05-25 12:01:36.465 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-25 12:01:36.521 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [jdbc:h2:mem:part_inventory_db]
 	Database driver: H2 JDBC Driver
 	Database dialect: H2Dialect
@@ -30,44 +30,44 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-05-22 18:37:13.984 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-22 18:37:13.993 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-22 18:37:14.068 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-22 18:37:14.240 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-22 18:37:14.254 [main] INFO  o.s.b.w.a.WelcomePageHandlerMapping - Adding welcome page template: index
-2026-05-22 18:37:14.571 [main] INFO  o.s.b.h.a.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:part_inventory_db'
-2026-05-22 18:37:14.652 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
-2026-05-22 18:37:14.693 [main] INFO  c.f.p.PartInventoryServiceApplicationTests - Started PartInventoryServiceApplicationTests in 3.072 seconds (process running for 3.888)
-2026-05-22 18:37:14.744 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2026-05-22 18:37:14.744 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
-2026-05-22 18:37:15.222 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-22 18:37:15.223 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2026-05-22 18:37:15.224 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2026-05-22 18:38:03.703 [main] INFO  c.f.p.PartInventoryServiceApplication - Starting PartInventoryServiceApplication v0.0.1-SNAPSHOT using Java 25.0.1 with PID 29637 (/Users/ramanuj/Documents/training-projects/advanced-kubernetes/services-source-code/part-inventory-service/target/part-inventory-service-0.0.1-SNAPSHOT.jar started by ramanuj in /Users/ramanuj/Documents/training-projects/advanced-kubernetes/services-source-code/part-inventory-service)
-2026-05-22 18:38:03.704 [main] INFO  c.f.p.PartInventoryServiceApplication - The following 1 profile is active: "dev"
-2026-05-22 18:38:03.733 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-22 18:38:03.733 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/part-inventory-service/default": Connection refused. Will be trying the next url if available
-2026-05-22 18:38:03.733 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@59712875 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/part-inventory-service/default": Connection refused
-2026-05-22 18:38:03.733 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-22 18:38:03.733 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/part-inventory-service/dev": Connection refused. Will be trying the next url if available
-2026-05-22 18:38:03.734 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@1917d90f uris = array<String>['http://localhost:8888'], optional = true, profiles = 'dev']): I/O error on GET request for "http://localhost:8888/part-inventory-service/dev": Connection refused
-2026-05-22 18:38:03.734 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
-2026-05-22 18:38:03.734 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/part-inventory-service/default": Connection refused. Will be trying the next url if available
-2026-05-22 18:38:03.734 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@66bfd864 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/part-inventory-service/default": Connection refused
-2026-05-22 18:38:04.363 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-22 18:38:04.391 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 1 JPA repository interface.
-2026-05-22 18:38:04.574 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=38050192-e598-342d-9b38-c9534c1019df
-2026-05-22 18:38:04.817 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2026-05-22 18:38:04.826 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-05-22 18:38:04.826 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
-2026-05-22 18:38:04.844 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1108 ms
-2026-05-22 18:38:04.960 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2026-05-22 18:38:05.101 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:part_inventory_db user=SA
-2026-05-22 18:38:05.102 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2026-05-22 18:38:05.151 [main] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-05-22 18:38:05.189 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.1.Final
-2026-05-22 18:38:05.469 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-22 18:38:05.531 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+2026-05-25 12:01:37.015 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-25 12:01:37.019 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-25 12:01:37.070 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-25 12:01:37.258 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-25 12:01:37.277 [main] INFO  o.s.b.w.a.WelcomePageHandlerMapping - Adding welcome page template: index
+2026-05-25 12:01:37.655 [main] INFO  o.s.b.h.a.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:part_inventory_db'
+2026-05-25 12:01:37.776 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-05-25 12:01:37.852 [main] INFO  c.f.p.PartInventoryServiceApplicationTests - Started PartInventoryServiceApplicationTests in 3.441 seconds (process running for 4.301)
+2026-05-25 12:01:37.912 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-05-25 12:01:37.912 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-05-25 12:01:38.322 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-25 12:01:38.323 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-05-25 12:01:38.326 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-05-25 12:02:51.177 [main] INFO  c.f.p.PartInventoryServiceApplication - Starting PartInventoryServiceApplication v0.0.1-SNAPSHOT using Java 25.0.1 with PID 19811 (/Users/ramanuj/Documents/training-projects/advanced-kubernetes/services-source-code/part-inventory-service/target/part-inventory-service-0.0.1-SNAPSHOT.jar started by ramanuj in /Users/ramanuj/Documents/training-projects/advanced-kubernetes/services-source-code/part-inventory-service)
+2026-05-25 12:02:51.178 [main] INFO  c.f.p.PartInventoryServiceApplication - The following 1 profile is active: "dev"
+2026-05-25 12:02:51.226 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-25 12:02:51.226 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/part-inventory-service/default": Connection refused. Will be trying the next url if available
+2026-05-25 12:02:51.226 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@59712875 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/part-inventory-service/default": Connection refused
+2026-05-25 12:02:51.226 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-25 12:02:51.226 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/part-inventory-service/dev": Connection refused. Will be trying the next url if available
+2026-05-25 12:02:51.227 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@1917d90f uris = array<String>['http://localhost:8888'], optional = true, profiles = 'dev']): I/O error on GET request for "http://localhost:8888/part-inventory-service/dev": Connection refused
+2026-05-25 12:02:51.227 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2026-05-25 12:02:51.227 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/part-inventory-service/default": Connection refused. Will be trying the next url if available
+2026-05-25 12:02:51.227 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@66bfd864 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/part-inventory-service/default": Connection refused
+2026-05-25 12:02:51.933 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-25 12:02:51.966 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 1 JPA repository interface.
+2026-05-25 12:02:52.104 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=38050192-e598-342d-9b38-c9534c1019df
+2026-05-25 12:02:52.410 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-25 12:02:52.421 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-25 12:02:52.421 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-05-25 12:02:52.441 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1208 ms
+2026-05-25 12:02:52.578 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-25 12:02:52.736 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:part_inventory_db user=SA
+2026-05-25 12:02:52.737 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-25 12:02:52.803 [main] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-25 12:02:52.855 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-05-25 12:02:53.190 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-25 12:02:53.244 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [jdbc:h2:mem:part_inventory_db]
 	Database driver: H2 JDBC Driver
 	Database dialect: H2Dialect
@@ -79,31 +79,31 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-05-22 18:38:06.059 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-22 18:38:06.064 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-22 18:38:06.113 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-22 18:38:06.267 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-22 18:38:06.280 [main] INFO  o.s.b.w.a.WelcomePageHandlerMapping - Adding welcome page template: index
-2026-05-22 18:38:06.584 [main] INFO  o.s.b.h.a.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:part_inventory_db'
-2026-05-22 18:38:06.644 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
-2026-05-22 18:38:06.698 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2026-05-22 18:38:06.712 [main] INFO  c.f.p.PartInventoryServiceApplication - Started PartInventoryServiceApplication in 3.81 seconds (process running for 4.286)
-2026-05-22 18:38:06.772 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2026-05-22 18:38:06.772 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
-2026-05-22 18:38:35.462 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-22 18:38:35.463 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-05-22 18:38:35.472 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
-2026-05-22 18:38:35.699 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
-    select
-        p1_0.id,
-        p1_0.name,
-        p1_0.price,
-        p1_0.sku,
-        p1_0.stock 
-    from
-        parts p1_0
-2026-05-22 18:39:37.098 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2026-05-22 18:39:37.120 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
-2026-05-22 18:39:37.137 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-22 18:39:37.150 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2026-05-22 18:39:37.155 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-05-25 12:02:53.790 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-25 12:02:53.794 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-25 12:02:53.860 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-25 12:02:54.046 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-25 12:02:54.059 [main] INFO  o.s.b.w.a.WelcomePageHandlerMapping - Adding welcome page template: index
+2026-05-25 12:02:54.375 [main] INFO  o.s.b.h.a.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:part_inventory_db'
+2026-05-25 12:02:54.434 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-05-25 12:02:54.486 [main] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-05-25 12:02:54.489 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-25 12:02:54.490 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-05-25 12:02:54.492 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-05-25 12:02:54.504 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-25 12:02:54.514 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+

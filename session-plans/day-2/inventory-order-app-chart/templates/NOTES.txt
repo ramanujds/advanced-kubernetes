@@ -1,0 +1,38 @@
+inv-order-app deployed successfully.
+
+{{- if .Values.partInventory.enabled }}
+
+part-inventory-service:
+  Service type: {{ .Values.partInventory.service.type }}
+  {{- if eq .Values.partInventory.service.type "NodePort" }}
+  Access: http://<node-ip>:{{ .Values.partInventory.service.nodePort }}/api/parts
+  {{- else }}
+  Access: http://{{ .Values.partInventory.service.name }}/api/parts (cluster-internal)
+  {{- end }}
+{{- end }}
+
+{{- if .Values.partOrder.enabled }}
+
+part-order-service:
+  Service type: {{ .Values.partOrder.service.type }}
+  {{- if eq .Values.partOrder.service.type "NodePort" }}
+  Access: http://<node-ip>:{{ .Values.partOrder.service.nodePort }}/api/part-orders
+  {{- else }}
+  Access: http://{{ .Values.partOrder.service.name }}/api/part-orders (cluster-internal)
+  {{- end }}
+{{- end }}
+
+{{- if .Values.ingress.enabled }}
+
+Ingress enabled — routes:
+  {{- range .Values.ingress.hosts }}
+  {{- range .paths }}
+  http://{{ $.Values.ingress.hosts | first | get "host" }}{{ .path }} → {{ .serviceName }}
+  {{- end }}
+  {{- end }}
+{{- end }}
+
+Useful commands:
+  helm status {{ .Release.Name }} -n {{ .Release.Namespace }}
+  helm get values {{ .Release.Name }} -n {{ .Release.Namespace }}
+  kubectl get pods -n {{ .Release.Namespace }}

@@ -1,0 +1,76 @@
+{{- if .Values.partOrder.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: part-order-service
+  labels:
+    {{- include "inv-order-app.labels" . | nindent 4 }}
+    {{- include "inv-order-app.order.selectorLabels" . | nindent 4 }}
+spec:
+  {{- if not .Values.partOrder.autoscaling.enabled }}
+  replicas: {{ .Values.partOrder.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "inv-order-app.order.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "inv-order-app.order.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: part-order-service
+          image: "{{ .Values.partOrder.image.repository }}:{{ .Values.partOrder.image.tag }}"
+          imagePullPolicy: {{ .Values.partOrder.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.partOrder.service.targetPort }}
+              name: http
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: {{ .Values.partOrder.env.springProfilesActive | quote }}
+            - name: MYSQL_HOST
+              value: {{ .Values.partOrder.env.mysqlHost | quote }}
+            - name: MYSQL_PORT
+              value: {{ .Values.partOrder.env.mysqlPort | quote }}
+            - name: MYSQL_DATABASE
+              value: {{ .Values.partOrder.env.mysqlDatabase | quote }}
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "inv-order-app.mysqlSecretName" . }}
+                  key: mysql-user
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "inv-order-app.mysqlSecretName" . }}
+                  key: mysql-password
+            - name: INVENTORY_SERVICE_URL
+              value: {{ .Values.partOrder.env.inventoryServiceUrl | quote }}
+          resources:
+            {{- toYaml .Values.partOrder.resources | nindent 12 }}
+          {{- if .Values.partOrder.startupProbe.enabled }}
+          startupProbe:
+            httpGet:
+              path: {{ .Values.partOrder.startupProbe.path | quote }}
+              port: {{ .Values.partOrder.startupProbe.port }}
+            failureThreshold: {{ .Values.partOrder.startupProbe.failureThreshold }}
+            periodSeconds: {{ .Values.partOrder.startupProbe.periodSeconds }}
+          {{- end }}
+          {{- if .Values.partOrder.livenessProbe.enabled }}
+          livenessProbe:
+            httpGet:
+              path: {{ .Values.partOrder.livenessProbe.path | quote }}
+              port: {{ .Values.partOrder.livenessProbe.port }}
+            initialDelaySeconds: {{ .Values.partOrder.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.partOrder.livenessProbe.periodSeconds }}
+            failureThreshold: {{ .Values.partOrder.livenessProbe.failureThreshold }}
+          {{- end }}
+          {{- if .Values.partOrder.readinessProbe.enabled }}
+          readinessProbe:
+            httpGet:
+              path: {{ .Values.partOrder.readinessProbe.path | quote }}
+              port: {{ .Values.partOrder.readinessProbe.port }}
+            periodSeconds: {{ .Values.partOrder.readinessProbe.periodSeconds }}
+            failureThreshold: {{ .Values.partOrder.readinessProbe.failureThreshold }}
+          {{- end }}
+{{- end }}

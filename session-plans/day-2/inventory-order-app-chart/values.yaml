@@ -1,0 +1,144 @@
+nameOverride: ""
+fullnameOverride: ""
+
+# MySQL Secret — chart creates the Secret when create: true.
+# Set create: false and provide secretName to use a pre-existing Secret.
+mysql:
+  secret:
+    create: true
+    name: mysql-secret
+    user: root
+    password: password
+
+partInventory:
+  enabled: true
+  replicaCount: 1
+  image:
+    repository: ram1uj/part-inventory-service
+    tag: "latest"
+    pullPolicy: Always
+  service:
+    type: NodePort
+    port: 80
+    targetPort: 8080
+    nodePort: 30081
+    name: part-inventory-service
+  env:
+    springProfilesActive: dev
+    mysqlHost: mysql
+    mysqlPort: "3306"
+    mysqlDatabase: part_inventory_db
+  startupProbe:
+    enabled: true
+    path: /actuator/health/readiness
+    port: 8080
+    failureThreshold: 30
+    periodSeconds: 10
+  livenessProbe:
+    enabled: true
+    path: /actuator/health/liveness
+    port: 8080
+    initialDelaySeconds: 0
+    periodSeconds: 10
+    failureThreshold: 3
+  readinessProbe:
+    enabled: true
+    path: /actuator/health/readiness
+    port: 8080
+    periodSeconds: 5
+    failureThreshold: 3
+  resources:
+    requests:
+      cpu: "250m"
+      memory: "256Mi"
+    limits:
+      cpu: "600m"
+      memory: "512Mi"
+  autoscaling:
+    enabled: false
+    minReplicas: 2
+    maxReplicas: 5
+    cpu:
+      enabled: true
+      averageUtilization: 70
+    memory:
+      enabled: false
+      averageUtilization: 80
+
+partOrder:
+  enabled: true
+  replicaCount: 1
+  image:
+    repository: ram1uj/part-order-service
+    tag: "latest"
+    pullPolicy: Always
+  service:
+    type: NodePort
+    port: 80
+    targetPort: 8080
+    nodePort: 30082
+    name: part-order-service
+  env:
+    springProfilesActive: dev
+    mysqlHost: mysql
+    mysqlPort: "3306"
+    mysqlDatabase: part_inventory_db
+    inventoryServiceUrl: http://part-inventory-service
+  startupProbe:
+    enabled: true
+    path: /actuator/health/readiness
+    port: 8080
+    failureThreshold: 30
+    periodSeconds: 10
+  livenessProbe:
+    enabled: true
+    path: /actuator/health/liveness
+    port: 8080
+    initialDelaySeconds: 0
+    periodSeconds: 10
+    failureThreshold: 3
+  readinessProbe:
+    enabled: true
+    path: /actuator/health/readiness
+    port: 8080
+    periodSeconds: 5
+    failureThreshold: 3
+  resources:
+    requests:
+      cpu: "200m"
+      memory: "256Mi"
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+  autoscaling:
+    enabled: false
+    minReplicas: 2
+    maxReplicas: 5
+    cpu:
+      enabled: true
+      averageUtilization: 70
+    memory:
+      enabled: false
+      averageUtilization: 80
+
+ingress:
+  enabled: false
+  className: nginx
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+  hosts:
+    - host: parts.local
+      paths:
+        - path: /inventory(/|$)(.*)
+          pathType: ImplementationSpecific
+          serviceName: part-inventory-service
+          servicePort: 80
+        - path: /orders(/|$)(.*)
+          pathType: ImplementationSpecific
+          serviceName: part-order-service
+          servicePort: 80
+  tls: []
+  # tls:
+  #   - secretName: parts-tls
+  #     hosts:
+  #       - parts.local
