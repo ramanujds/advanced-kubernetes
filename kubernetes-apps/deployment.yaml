@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: part-inventory-service
-          image: ram1uj/abc
+          image: ram1uj/part-inventory-service
           ports:
             - containerPort: 8080
           imagePullPolicy: Never
