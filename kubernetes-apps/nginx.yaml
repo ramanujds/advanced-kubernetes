@@ -1,13 +1,21 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-    name: nginx
-    labels:
-      app: part-inventory-service
+  name: nginx-deployment
 spec:
-  containers:
-   - name: nginx
-     image: nginx
-     ports:
-      - containerPort: 80
-     imagePullPolicy: Never
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      name: nginx
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          ports:
+            - containerPort: 80
+          imagePullPolicy: Never
