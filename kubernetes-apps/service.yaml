@@ -7,3 +7,4 @@ spec:
     app: part-inventory-service
   ports:
     - port: 8080
+  type: NodePort
