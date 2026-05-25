@@ -17,3 +17,5 @@ COPY --from=build /app/target/*.jar app.jar
 #USER nonroot
 
 ENTRYPOINT ["java","-jar", "app.jar"]
+
+EXPOSE 8080
