@@ -12,6 +12,16 @@ spec:
       labels:
         app: part-inventory-service
     spec:
+#      initContainers:
+#        - name: init-db-connection
+#          image: busybox
+#          command: ['sh', '-c', 'echo "Checking DB connection..."; until nc -z $MYSQL_HOST $MYSQL_PORT; do echo "Waiting for DB..."; sleep 5; done; echo "DB is up!"']
+#          env:
+#            - name: MYSQL_HOST
+#              value: "mysql.default.svc.cluster.local"
+#            - name: MYSQL_PORT
+#              value: "3306"
+
       containers:
         - name: part-inventory-service
           image: ram1uj/part-inventory-service

@@ -20,7 +20,7 @@ spec:
             - name: SPRING_PROFILES_ACTIVE
               value: "dev"
             - name: INVENTORY_SERVICE_URL
-              value: "http://part-inventory-service:80"
+              value: "http://part-inventory-service:8080"
           ports:
             - containerPort: 8080
           resources:
