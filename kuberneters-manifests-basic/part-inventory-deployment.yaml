@@ -15,8 +15,8 @@ spec:
     spec:
       containers:
         - name: part-inventory-service
-          image: ram1uj/part-inventory-service:latest
-          imagePullPolicy: Always
+          image: ram1uj/part-inventory-service
+          imagePullPolicy: Never
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: "dev"
