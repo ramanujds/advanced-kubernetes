@@ -18,50 +18,28 @@ helm install prometheus prometheus-community/prometheus --version 27.8.0
 ## 3. Install Grafana
 
 ```sh
-helm install grafana grafana/grafana --version 8.12.0
+helm install grafana grafana/grafana --version 8.12.0 -f grafana-values.yaml
 ```
 
-## 4. Expose Services
+## 4. Create Services to Expose Grafana
 
 ```sh
-kubectl expose service grafana --type=NodePort --target-port=3000 --name=grafana-ext
+kubectl apply -f grafana-nodeport.yaml
 ```
 
-### Optional: Expose Prometheus Service
-
-```sh
-kubectl expose service prometheus-server --type=NodePort --target-port=80 --name=prometheus-server-ext
-```
-
-## 5. Access Services via Minikube
-
-```sh
-minikube service grafana-ext --url
-minikube service prometheus-server-ext --url
-```
-
-Copy the URL for `prometheus-server-ext` (the first one shown).
-
-## For Docker-Desktop
-
- Use the name of the prometheus-server service directly
 
 
-## 6. Configure Grafana
+## 5. Configure Grafana
 
 1. Open Grafana in your browser using the URL from above.
-2. Add a new data source:
-    - Select **Prometheus** as the data source type.
-    - Paste the `prometheus-server-ext` URL. (For Minikube)
-    - Paste `http://prometheus-server:80` (For Docker Desktop)
-3. Create a new dashboard:
+2. Create a new dashboard:
     - Go to **Create** → **Import Dashboard**.
     - Input dashboard ID: `15661`.
     - Set the data source to **Prometheus**.
 
 ---
 
-## 7. Add Loki for Log Aggregation (Sidecar Pattern)
+## 6. Add Loki for Log Aggregation (Sidecar Pattern)
 
 ### Install Loki via Helm
 
