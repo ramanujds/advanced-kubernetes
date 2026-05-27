@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secure-app
+  namespace: dev
+  labels:
+    app: secure-app
+spec:
+  serviceAccountName: dev-user
+  automountServiceAccountToken: false   # disable if the Pod doesn't call the Kubernetes API
+
+  # Pod-level: applies to all containers
+  securityContext:
+    runAsUser: 1000
+    runAsGroup: 3000
+    fsGroup: 2000                       # volume ownership GID for non-root writes
+    runAsNonRoot: true                  # reject startup if the image runs as root (UID 0)
+
+  containers:
+    - name: app
+      image: ram1uj/part-inventory-service
+      imagePullPolicy: IfNotPresent
+      ports:
+        - containerPort: 8080
+      # Container-level: overrides or extends Pod-level settings
+      securityContext:
+        readOnlyRootFilesystem: true    # container cannot write to its own filesystem
+        allowPrivilegeEscalation: false # child processes cannot gain more privileges
+        capabilities:
+          drop: ["ALL"]                 # drop every Linux capability as baseline
+      env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: "prod"
+      resources:
+        requests:
+          memory: "256Mi"
+          cpu: "250m"
+        limits:
+          memory: "512Mi"
+          cpu: "500m"
+      volumeMounts:
+        - name: tmp-dir
+          mountPath: /tmp               # Spring Boot needs /tmp; must be writable
+
+  volumes:
+    - name: tmp-dir
+      emptyDir: {}                      # ephemeral scratch space; safe with readOnlyRootFilesystem

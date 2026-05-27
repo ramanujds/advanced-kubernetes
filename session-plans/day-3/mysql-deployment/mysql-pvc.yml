@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pvc
+  labels:
+    app: mysql
+spec:
+  storageClassName: hostpath-retain   # references the StorageClass for dynamic provisioning
+  accessModes:
+    - ReadWriteOnce                   # single node read-write; correct for MySQL
+  resources:
+    requests:
+      storage: 1Gi

@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-inventory-to-mysql
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: part-inventory-service     # policy applies to inventory Pods
+  policyTypes:
+    - Egress
+  egress:
+    - to:
+        - podSelector:
+            matchLabels:
+              app: mysql              # inventory may only reach MySQL Pods
+      ports:
+        - protocol: TCP
+          port: 3306

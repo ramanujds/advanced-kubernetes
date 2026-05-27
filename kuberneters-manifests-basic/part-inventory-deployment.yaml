@@ -11,11 +11,12 @@ spec:
     metadata:
       labels:
         app: part-inventory-service
+        version: v1
     spec:
       containers:
         - name: part-inventory-service
-          image: ram1uj/part-inventory-service
-          imagePullPolicy: IfNotPresent
+          image: ram1uj/part-inventory-service:latest
+          imagePullPolicy: Always
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: "dev"
@@ -28,3 +29,30 @@ spec:
             limits:
               memory: "512Mi"
               cpu: "500m"
+
+          startupProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 8080
+            failureThreshold: 5
+            periodSeconds: 5
+            initialDelaySeconds: 30
+            timeoutSeconds: 2
+
+          livenessProbe:
+              httpGet:
+                path: /actuator/health/liveness
+                port: 8080
+              initialDelaySeconds: 10
+              periodSeconds: 10
+              failureThreshold: 3
+              timeoutSeconds: 2
+
+          readinessProbe:
+              httpGet:
+                path: /actuator/health/readiness
+                port: 8080
+              periodSeconds: 5
+              failureThreshold: 3
+              initialDelaySeconds: 10
+              timeoutSeconds: 2

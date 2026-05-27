@@ -1,0 +1,13 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: hostpath-retain
+  labels:
+    app: mysql
+# docker.io/hostpath is the built-in provisioner for Docker Desktop.
+# For Minikube use: k8s.io/minikube-hostpath
+# For AWS EKS use:  ebs.csi.aws.com
+provisioner: docker.io/hostpath
+reclaimPolicy: Retain               # keep PV and data when PVC is deleted
+volumeBindingMode: WaitForFirstConsumer  # provision only when a Pod is scheduled
+allowVolumeExpansion: true          # allow PVC resize after creation

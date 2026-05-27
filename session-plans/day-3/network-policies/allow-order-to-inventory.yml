@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-order-to-inventory
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: part-inventory-service     # policy applies to inventory Pods
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app: part-order-service # only order-service Pods may call inventory
+      ports:
+        - protocol: TCP
+          port: 8080

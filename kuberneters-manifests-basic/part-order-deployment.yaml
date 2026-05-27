@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: part-order-service
 spec:
-  replicas: 1
+  replicas: 4
   selector:
     matchLabels:
       app: part-order-service
@@ -12,6 +12,18 @@ spec:
       labels:
         app: part-order-service
     spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                topologyKey: kubernetes.io/hostname
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - part-order-service
       containers:
         - name: part-order-service
           image: ram1uj/part-order-service:latest
