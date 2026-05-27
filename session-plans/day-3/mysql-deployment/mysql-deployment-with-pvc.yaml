@@ -8,7 +8,7 @@ spec:
   # Single replica: ReadWriteOnce PVCs cannot be shared across nodes.
   # Multiple MySQL instances writing to the same data directory will corrupt the DB.
   # Use a StatefulSet (mysql-statefulset.yaml) for multi-replica setups.
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: mysql

@@ -5,6 +5,6 @@ metadata:
   labels:
     app: mysql
 data:
-  MYSQL_HOST: "mysql.default.svc.cluster.local"
+  MYSQL_HOST: "mysql-0.mysql-svc.default.svc.cluster.local"
   MYSQL_PORT: "3306"
   MYSQL_DATABASE: "part_inventory_db"

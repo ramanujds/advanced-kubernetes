@@ -5,9 +5,9 @@ metadata:
   labels:
     app: mysql
 spec:
-  storageClassName: hostpath-retain   # references the StorageClass for dynamic provisioning
+#  storageClassName: hostpath-retain   # references the StorageClass for dynamic provisioning
   accessModes:
-    - ReadWriteOnce                   # single node read-write; correct for MySQL
+    - ReadWriteOnce                # single node read-write; correct for MySQL
   resources:
     requests:
       storage: 1Gi
